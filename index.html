@@ -1,23 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Hello World</title>
-    <link href="css/main.css" rel="stylesheet" />
-</head>
+<<!DOCTYPE html>
+<html>
 
-<!-- This is a comment -->
-<h1>LILY'S WEBPAGE</h1>
-    
-    <!--<div id="main" class>-->
-    <!--    <p id="foo">This is my first paragraph.</p>-->
-    <!--    <p id="bar">This is my second paragraph.<a href="http://www.uoregon.edu"> Take me to UO</a>.</p>-->
-    
-    <img src=https://upload.wikimedia.org/wikipedia/commons/d/d5/Retriever_in_water.jpg alt=""><br/>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22943.33084143383!2d-123.0667776!3d44.04378325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54c11e6b0e8fef25%3A0xa21ff07bace811ae!2sEugene%20Public%20Library%20-%20Downtown!5e0!3m2!1sen!2sus!4v1712253558765!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    
-    <!--    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Bright_green_tree_-_Waikato.jpg" alt="" width="500">-->
+  <head>
+    <meta charset='utf-8' />
+    <title>University of Oregon Mapping</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <!--    Include the reference to the Mapbox JavaScript here in the <head> of the page    -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+      <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
 
-    <!--</div>-->
-</body>
+          
+    <!--    Include the reference to the Mapbox CSS here in the <head> of the page    -->
+    
+
+    <style>
+        body { margin:0; padding:0; }
+     #map { position:absolute; top:0; bottom:0; width:100%; }
+             #title { z-index: 9999; 
+         background-color:white; 
+         opacity: 80%; 
+         text-align: center;
+        font-family: "Lucida Console", "Courier New", monospace;
+        color:gray
+            
+            
+     }
+    </style>
+  </head>
+
+  <body>
+    <!--  Insert the map div here in the <body> of the page  -->
+   <div id='map'>
+
+      </div>
+      
+    <!--  Insert the tile div here (part V) -->
+           <div id='title' >
+     		<h1>Oregon Zoo in Portland, Oregon</h1>
+     		<h2>By: Lily Lindros</h2>
+ 	</div>
+
+    <script>
+        // Insert the JavaScript within the <script> tags, within the body   
+        // Start with the Mapbox access token here
+         mapboxgl.accessToken = 'pk.eyJ1IjoibGlseWxpbmQiLCJhIjoiY2x1cWVxMXgxMmRhcTJqbnpvMm00MmJvYyJ9.XHSBuu0bRy4_-gDdXRrbMw';
+   
+        // Then initialize the map here
+        var map = new mapboxgl.Map({
+         container: 'map', // id of a div on your page, where the map will be inserted
+         style: 'mapbox://styles/lilylind/cluqgfdav00ly01pwd354g9qu', // stylesheet location
+         center: [-122.71429100306855, 45.50949250734763], // starting position [lng, lat] eg. [-122.6788, 45.5212]
+         zoom: 15 // starting zoom 
+        });
+
+
+        // Add popup markers here  (part IV)
+        
+    var popup = new mapboxgl.Popup({ offset: 0 })
+     .setHTML('Zoo Entrance');
+        
+
+        
+        // Add any other variables such as markers here (part III)
+ var marker = new mapboxgl.Marker({color: 'dark green'})
+     .setLngLat([-122.71429100306855, 45.50949250734763])
+     .setPopup(popup) //add the popup with the variable name 'popup' to the marker 
+     .addTo(map); // add the open marker to the map
+ var popup_layer = new mapboxgl.Popup({closeOnClick: true}) 
+     .setLngLat([-122.71303147231725, 45.50860851810596]) //popup coordinates
+    .setHTML('<a href="https://mobile.appetizeapp.com/oregonzoo/vendors/39274/menu">Aviary Cafe Menu</a>')
+     .addTo(map); //add this popup to the map!
+        
+
+        // Add optional advanced "On load" function here
+
+    </script>
+
+  </body>
+
 </html>
