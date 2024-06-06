@@ -1,0 +1,9 @@
+panda_id,name,gender,zoo,zoo_id,origin_loc,alive,death_loc,birth_year,loan1_start,loan1_end,death_year
+1,Bao Bao,m,Berlin Zoo,1,0,0,1,1978,1980,,2012
+2,Tjen Tjen,f,Berlin Zoo,1,0,0,1,1978,1980,,1984
+3,Yan Yan,f,Berlin Zoo,1,0,0,1,1985,1995,,2007
+4,Jiao Qing,m,Berlin Zoo,1,0,1,,2010,2017,,
+5,Meng Meng,f,Berlin Zoo,1,0,1,,2013,2017,,
+6,Meng Xiang,m,Berlin Zoo,1,1,1,,2019,,2023,
+7,Mengyuan,m,Berlin Zoo,1,1,1,,2019,,2023,
+8,Huan Huan,f,ZooParc de Beauval,3,0,1,,2008,2012,,
